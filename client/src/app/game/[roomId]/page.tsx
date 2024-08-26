@@ -13,7 +13,7 @@ const GamePage: React.FC = () => {
 	useEffect(() => {
 		if (typeof roomId === "string") {
 			const newSocket = io("http://localhost:4000", {
-				query: { roomId },
+				query: { roomId }, // Pass roomId and playerName
 			});
 
 			newSocket.on("connect", () => {
