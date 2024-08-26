@@ -50,7 +50,6 @@ const HomePage: React.FC = () => {
 					body: JSON.stringify({
 						roomId,
 						playerName,
-						socketId: "someSocketId", // Replace "someSocketId" with the actual socket ID
 					}),
 				}
 			);
