@@ -10,6 +10,8 @@ const HomePage: React.FC = () => {
 	const router = useRouter();
 
 	const createGame = async () => {
+		if (!playerName) return;
+
 		try {
 			const response = await fetch(
 				"http://localhost:4000/api/create-game",
@@ -22,6 +24,7 @@ const HomePage: React.FC = () => {
 			if (!response.ok) throw new Error("Failed to create game");
 
 			const data = await response.json();
+			console.log(data);
 			const { roomId } = data;
 
 			if (roomId) {
@@ -47,8 +50,8 @@ const HomePage: React.FC = () => {
 					body: JSON.stringify({
 						roomId,
 						playerName,
-						socketId: "someSocketId",
-					}), // Replace "someSocketId" with the actual socket ID
+						socketId: "someSocketId", // Replace "someSocketId" with the actual socket ID
+					}),
 				}
 			);
 

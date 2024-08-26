@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
     socket.on("joinRoom", ({ roomId }) => {
         // Log the current state of rooms
-        console.log("Current rooms state:", rooms);
+        console.log("Current rooms state (Index):", rooms);
         if (rooms[roomId]) {
             // Check if the room exists
             if (rooms[roomId].length < 2) {
@@ -56,7 +56,7 @@ io.on("connection", (socket) => {
             console.log(`Socket ${socket.id} created and joined new room ${roomId} as ${playerType}`);
         }
         // Log the updated state of rooms
-        console.log("Updated rooms state:", rooms);
+        console.log("Updated rooms state(index):", rooms);
     });
     socket.on("disconnect", () => {
         console.log("User disconnected:", socket.id);

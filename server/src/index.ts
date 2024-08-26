@@ -34,7 +34,7 @@ io.on("connection", (socket) => {
 
 	socket.on("joinRoom", ({ roomId }) => {
 		// Log the current state of rooms
-		console.log("Current rooms state:", rooms);
+		console.log("Current rooms state (Index):", rooms);
 
 		if (rooms[roomId]) {
 			// Check if the room exists
@@ -63,7 +63,7 @@ io.on("connection", (socket) => {
 		}
 
 		// Log the updated state of rooms
-		console.log("Updated rooms state:", rooms);
+		console.log("Updated rooms state(index):", rooms);
 	});
 
 	socket.on("disconnect", () => {
